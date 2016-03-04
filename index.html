@@ -1,0 +1,39 @@
+<html ng-app="Test">
+<head>
+    <meta charset="UTF-8">
+    <title>Sara's Test</title>
+    <link rel="stylesheet" href="assets/plugins/bootstrap/dist/css/bootstrap.min.css">
+    
+</head>
+<body ng-controller="MainController">
+    
+    <div>
+        <h1>Every day is a great day for a movie!!!</h1>
+    </div>
+    
+    <div>
+        <input type="text" ng-model="newMovie.name" placeholder="Movie Name">
+        <input type="number" ng-model="newMovie.year" placeholder="Release Year">
+        <button class="btn btn-primary" ng-click="addMovie()"> ADD A MOVIE TO THE LIST</button>
+    </div>
+    
+    <div class="panel-body container-fluid">
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="movie in films track by $index">
+                <span class="badge" ng-click="removeMovie($index)">Click Me if you hate this Movie</span>
+                <h2>{{movie.name}}</h2> 
+                <h4>YEAR RELEASED:{{movie.year}}</h4>
+                
+            </li>
+        </ul>
+    </div>
+    
+    
+ 
+    
+    <script src="assets/plugins/angular/angular.min.js"></script>
+    
+    <script src="app/config/init.js"></script>
+    <script src="app/components/main-controller.js"></script>
+</body>
+</html>
